@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/poster.jpg" />
+    <title>
+      Vuyo Mphakwana: Learnership Life - Real stories. Real struggles. Real
+      growth.
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Blue Hamburger Menu Button (Always Visible) -->
+    <button class="hamburger-menu" id="sidebarToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="images/vuyo-avatar.svg" alt="Vuyo Mphakwana" class="avatar" />
+        <h3>Your Learnership Guide</h3>
+      </div>
+      <ul class="nav-menu">
+        <li>
+          <a href="#" onclick="showSection('about')" class="nav-link active"
+            ><i class="fas fa-info-circle"></i> About</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="showSection('episodes')" class="nav-link"
+            ><i class="fas fa-play-circle"></i> Learning Resources</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="showSection('quiz')" class="nav-link"
+            ><i class="fas fa-question-circle"></i> Quizzes</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="showSection('certification')" class="nav-link"
+            ><i class="fas fa-certificate"></i> Certification</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- About Section -->
+      <section id="about" class="content-section active">
+        <div class="hero">
+          <img
+            src="images/vuyo-avatar.svg"
+            alt="Vuyo Mphakwana"
+            class="hero-avatar"
+          />
+          <div class="hero-text">
+            <h1>Vuyo Mphakwana: Learnership Life</h1>
+            <p class="tagline">Real stories. Real struggles. Real growth.</p>
+            <p>
+              Vuyo Mphakwana: Learnership Life is a powerful short course
+              narrated by Vuyo, who shares the real-life journeys of two young
+              women — Nomsa and Karabo.<br /><br />
+
+              Through their stories, this course explores the real challenges
+              faced in learnerships, from teenage pregnancy and peer pressure,
+              to being a breadwinner and dropping out.<br /><br />
+
+              It’s built to inspire and guide young learners — especially
+              African women — toward safer, smarter, and stronger choices for
+              their future.<br /><br />
+            </p>
+            <button onclick="showSection('episodes-list')" class="cta-button">
+              <i class="fas fa-play"></i> Start Learning
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learning Resources Section -->
+      <section id="episodes" class="content-section">
+        <h2>Learning Resources</h2>
+        <div class="learning-resources-grid">
+          <div
+            class="resource-card"
+            onclick="showResourceDetail('contraceptives')"
+          >
+            <div class="resource-icon">🛡️</div>
+            <h3>Contraceptives and Staying Safe</h3>
+            <p>
+              Learn about different contraceptive methods and how to protect
+              yourself from unplanned pregnancy.
+            </p>
+            <div class="card-action">Click to learn more →</div>
+          </div>
+
+          <div
+            class="resource-card"
+            onclick="showResourceDetail('peer-pressure')"
+          >
+            <div class="resource-icon">👥</div>
+            <h3>Avoiding Peer Pressure</h3>
+            <p>
+              Understand how to resist negative peer pressure and make decisions
+              that align with your goals.
+            </p>
+            <div class="card-action">Click to learn more →</div>
+          </div>
+
+          <div
+            class="resource-card"
+            onclick="showResourceDetail('financial-planning')"
+          >
+            <div class="resource-icon">💰</div>
+            <h3>Financial Planning for Young Adults</h3>
+            <p>
+              Essential budgeting and money management skills for learnership
+              participants.
+            </p>
+            <div class="card-action">Click to learn more →</div>
+          </div>
+
+          <div
+            class="resource-card"
+            onclick="showResourceDetail('career-guidance')"
+          >
+            <div class="resource-icon">🎯</div>
+            <h3>Career Planning and Goal Setting</h3>
+            <p>
+              How to set realistic career goals and create a pathway to achieve
+              them.
+            </p>
+            <div class="card-action">Click to learn more →</div>
+          </div>
+
+          <div class="resource-card" onclick="showResourceDetail('episodes')">
+            <div class="resource-icon">🎬</div>
+            <h3>Vuyo's Story Episodes</h3>
+            <p>
+              Follow Vuyo's journey through 6 episodes showcasing real
+              learnership challenges.
+            </p>
+            <div class="card-action">Watch episodes →</div>
+          </div>
+
+          <div
+            class="resource-card"
+            onclick="showResourceDetail('support-systems')"
+          >
+            <div class="resource-icon">🤝</div>
+            <h3>Building Support Systems</h3>
+            <p>
+              Learn how to build and maintain strong support networks during
+              challenging times.
+            </p>
+            <div class="card-action">Click to learn more →</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Episodes Section -->
+      <section id="episodes-list" class="content-section">
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <h2>Vuyo's Story Episodes</h2>
+        <div class="episodes-grid">
+          <div
+            class="episode-card"
+            data-episode="1"
+            onclick="openVideoPlayer(1)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-1">⚪</span>
+              <h3>Episode 1: New Beginnings</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 1"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Nomsa and Karabo start their learnership journey with high hopes
+              and excitement.<br />
+              They bond over shared dreams and the promise of a brighter future.
+            </p>
+          </div>
+
+          <div
+            class="episode-card"
+            data-episode="2"
+            onclick="openVideoPlayer(2)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-2">⚪</span>
+              <h3>Episode 2: First Challenges</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 2"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Reality kicks in as balancing home life and training proves harder
+              than expected.<br />
+              Karabo hides her struggles, while Nomsa tries to stay strong.
+            </p>
+          </div>
+
+          <div
+            class="episode-card"
+            data-episode="3"
+            onclick="openVideoPlayer(3)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-3">⚪</span>
+              <h3>Episode 3: Difficult Choices</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 3"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Karabo finds out she’s pregnant and feels scared to speak up.<br />
+              Nomsa notices the change, but doesn't know how to help.
+            </p>
+          </div>
+
+          <div
+            class="episode-card"
+            data-episode="4"
+            onclick="openVideoPlayer(4)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-4">⚪</span>
+              <h3>Episode 4: Family Responsibilities</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 4"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Karabo skips sessions and considers dropping out to care for her
+              baby.<br />
+              Nomsa encourages her to speak to their mentor, Vuyo.
+            </p>
+          </div>
+
+          <div
+            class="episode-card"
+            data-episode="5"
+            onclick="openVideoPlayer(5)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-5">⚪</span>
+              <h3>Episode 5: Making Tough Decisions</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 5"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Karabo leaves the programme, overwhelmed by life at home.<br />
+              Nomsa is heartbroken but more determined than ever to succeed.
+            </p>
+          </div>
+
+          <div
+            class="episode-card"
+            data-episode="6"
+            onclick="openVideoPlayer(6)"
+          >
+            <div class="episode-header">
+              <span class="episode-status" id="status-6">⚪</span>
+              <h3>Episode 6: Growth and Wisdom</h3>
+            </div>
+            <div class="episode-thumbnail">
+              <div class="play-button">▶</div>
+              <img
+                src="images/vuyo-avatar.svg"
+                alt="Episode 6"
+                class="thumbnail-image"
+              />
+            </div>
+            <p class="episode-description">
+              Vuyo reflects on their journey and lessons learned.<br />
+              Nomsa graduates, and Karabo writes her a message full of hope.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resource Detail Sections -->
+      <section
+        id="resource-contraceptives"
+        class="content-section resource-detail"
+      >
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <div class="resource-content">
+          <h2>🛡️ Contraceptives and Staying Safe</h2>
+          <div class="resource-info">
+            <h3>Understanding Contraception</h3>
+            <p>
+              Contraception helps prevent unplanned pregnancy and allows you to
+              plan your future on your own terms. Here are key points every
+              young person should know:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>Types of Contraception</h4>
+                <ul>
+                  <li>
+                    <strong>Condoms:</strong> Protect against pregnancy and STIs
+                  </li>
+                  <li>
+                    <strong>Birth Control Pills:</strong> Daily hormone pills
+                    (requires prescription)
+                  </li>
+                  <li>
+                    <strong>Injection:</strong> Quarterly hormone injection
+                  </li>
+                  <li><strong>IUD:</strong> Long-term contraceptive device</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>Where to Get Help</h4>
+                <ul>
+                  <li>Local healthcare clinics</li>
+                  <li>Family planning centers</li>
+                  <li>School health services</li>
+                  <li>Pharmacies (for condoms)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="important-note">
+              <h4>Remember:</h4>
+              <p>
+                Always consult with a healthcare professional to find the
+                contraceptive method that's right for you. Every person's needs
+                are different, and healthcare providers can give you
+                personalized advice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="resource-peer-pressure"
+        class="content-section resource-detail"
+      >
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <div class="resource-content">
+          <h2>👥 Avoiding Peer Pressure</h2>
+          <div class="resource-info">
+            <h3>Standing Strong in Your Decisions</h3>
+            <p>
+              Peer pressure can influence us to make choices that don't align
+              with our goals. Here's how to stay true to yourself:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>Recognizing Peer Pressure</h4>
+                <ul>
+                  <li>
+                    Feeling pressured to do things you're uncomfortable with
+                  </li>
+                  <li>Being teased for making responsible choices</li>
+                  <li>Friends encouraging risky behavior</li>
+                  <li>Feeling left out for saying "no"</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>Strategies to Resist</h4>
+                <ul>
+                  <li>Practice saying "no" confidently</li>
+                  <li>Suggest alternative activities</li>
+                  <li>Surround yourself with supportive friends</li>
+                  <li>Remember your goals and values</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="important-note">
+              <h4>Your Future Matters:</h4>
+              <p>
+                True friends will respect your decisions and support your goals.
+                Don't let temporary pressure derail your long-term success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="resource-financial-planning"
+        class="content-section resource-detail"
+      >
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <div class="resource-content">
+          <h2>💰 Financial Planning for Young Adults</h2>
+          <div class="resource-info">
+            <h3>Managing Money Wisely</h3>
+            <p>
+              Good financial habits start early. Learn how to manage your
+              learnership stipend and plan for your future:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>Budgeting Basics</h4>
+                <ul>
+                  <li>Track your income and expenses</li>
+                  <li>Separate needs from wants</li>
+                  <li>Set aside money for emergencies</li>
+                  <li>Plan for transport and meals</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>Saving Tips</h4>
+                <ul>
+                  <li>Save a percentage of your stipend</li>
+                  <li>Look for free or low-cost activities</li>
+                  <li>Cook meals instead of buying takeaways</li>
+                  <li>Use public transport wisely</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="important-note">
+              <h4>Building for the Future:</h4>
+              <p>
+                Small savings now can help you build financial security. Even
+                saving R50 per month adds up over time and teaches valuable
+                money management skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="resource-career-guidance"
+        class="content-section resource-detail"
+      >
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <div class="resource-content">
+          <h2>🎯 Career Planning and Goal Setting</h2>
+          <div class="resource-info">
+            <h3>Building Your Career Path</h3>
+            <p>
+              Your learnership is just the beginning. Here's how to plan for
+              long-term career success:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>Setting SMART Goals</h4>
+                <ul>
+                  <li><strong>Specific:</strong> Clear, well-defined goals</li>
+                  <li><strong>Measurable:</strong> Track your progress</li>
+                  <li><strong>Achievable:</strong> Realistic and attainable</li>
+                  <li><strong>Relevant:</strong> Aligned with your values</li>
+                  <li><strong>Time-bound:</strong> Set deadlines</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>Career Development</h4>
+                <ul>
+                  <li>Build relevant skills continuously</li>
+                  <li>Network with industry professionals</li>
+                  <li>Seek mentorship opportunities</li>
+                  <li>Stay updated with industry trends</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="important-note">
+              <h4>Your Journey is Unique:</h4>
+              <p>
+                Every career path is different. Focus on your own growth and
+                don't compare yourself to others. Consistent effort and learning
+                will lead to success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="resource-support-systems"
+        class="content-section resource-detail"
+      >
+        <div class="back-button-container">
+          <button onclick="showSection('episodes')" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Learning Resources
+          </button>
+        </div>
+        <div class="resource-content">
+          <h2>🤝 Building Support Systems</h2>
+          <div class="resource-info">
+            <h3>Creating Your Network</h3>
+            <p>
+              Having strong support systems is crucial for navigating life's
+              challenges. Here's how to build and maintain them:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>Types of Support</h4>
+                <ul>
+                  <li><strong>Family:</strong> Primary emotional support</li>
+                  <li>
+                    <strong>Friends:</strong> Peer support and understanding
+                  </li>
+                  <li><strong>Mentors:</strong> Guidance and career advice</li>
+                  <li>
+                    <strong>Professionals:</strong> Counselors and healthcare
+                    providers
+                  </li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>Building Relationships</h4>
+                <ul>
+                  <li>Be genuine and authentic</li>
+                  <li>Listen actively to others</li>
+                  <li>Offer support to others</li>
+                  <li>Maintain regular communication</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="important-note">
+              <h4>Remember:</h4>
+              <p>
+                It's okay to ask for help when you need it. Building support
+                systems takes time, but the investment is worth it for your
+                mental health and overall success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Player Modal -->
+      <div id="videoModal" class="video-modal" style="display: none">
+        <div class="video-modal-content">
+          <div class="video-header">
+            <button onclick="closeVideoPlayer()" class="close-video-btn">
+              <i class="fas fa-times"></i>
+            </button>
+            <h3 id="videoTitle">Episode Title</h3>
+          </div>
+          <div class="video-container">
+            <video id="modalVideo" controls preload="metadata">
+              <source id="videoSource" src="" type="video/mp4" />
+              <track
+                id="videoSubtitles"
+                kind="subtitles"
+                src=""
+                srclang="en"
+                label="English"
+                default
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="video-controls">
+            <button
+              id="prevEpisodeBtn"
+              onclick="goToPreviousEpisode()"
+              class="nav-episode-btn"
+            >
+              <i class="fas fa-chevron-left"></i> Previous Episode
+            </button>
+            <button
+              id="nextEpisodeBtn"
+              onclick="goToNextEpisode()"
+              class="nav-episode-btn"
+            >
+              Next Episode <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="episode-info">
+            <p id="episodeDescription">Episode description will appear here.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Section -->
+      <section id="quiz" class="content-section">
+        <div class="quiz-container">
+          <h2>Knowledge Check Quiz</h2>
+          <p>
+            Test your understanding of Vuyo's journey and the lessons learned.
+          </p>
+
+          <div id="quiz-questions" class="quiz-questions">
+            <div class="question" data-question="1">
+              <h3>Question 1: Who fell pregnant in the story?</h3>
+              <div class="options">
+                <label
+                  ><input type="radio" name="q1" value="a" /> a) Vuyo</label
+                >
+
+                <label
+                  ><input type="radio" name="q1" value="b" /> b) Karabo</label
+                >
+
+                <label
+                  ><input type="radio" name="q1" value="c" /> c) Nomsa</label
+                >
+              </div>
+            </div>
+
+            <div class="question" data-question="2">
+              <h3>Question 2: What is one way to prevent pregnancy?</h3>
+              <div class="options">
+                <label
+                  ><input type="radio" name="q2" value="a" /> a) Ignoring the
+                  issue</label
+                >
+
+                <label
+                  ><input type="radio" name="q2" value="b" /> b) Using
+                  contraceptives</label
+                >
+
+                <label
+                  ><input type="radio" name="q2" value="c" /> c) Dropping out of
+                  school</label
+                >
+              </div>
+            </div>
+
+            <div class="question" data-question="3">
+              <h3>Question 3: What is the main lesson from the course?</h3>
+              <div class="options">
+                <label
+                  ><input type="radio" name="q3" value="a" /> a) Giving up is
+                  the best option</label
+                >
+
+                <label
+                  ><input type="radio" name="q3" value="b" /> b) Making informed
+                  decisions helps growth</label
+                >
+
+                <label
+                  ><input type="radio" name="q3" value="c" /> c) Avoid learning
+                  resources</label
+                >
+              </div>
+            </div>
+
+            <div class="question" data-question="4">
+              <h3>
+                Question 4: What is Vuyo's advice about making decisions for the
+                future?
+              </h3>
+              <div class="options">
+                <label
+                  ><input type="radio" name="q4" value="a" /> a) Make quick
+                  decisions without thinking</label
+                >
+
+                <label
+                  ><input type="radio" name="q4" value="b" /> b) Stay safe and
+                  make wiser decisions for your future and career</label
+                >
+
+                <label
+                  ><input type="radio" name="q4" value="c" /> c) Let others make
+                  decisions for you</label
+                >
+              </div>
+            </div>
+
+            <div class="question" data-question="5">
+              <h3>
+                Question 5: What should you do if you face challenges during
+                your learnership?
+              </h3>
+              <div class="options">
+                <label
+                  ><input type="radio" name="q5" value="a" /> a) Keep it to
+                  yourself</label
+                >
+                <label
+                  ><input type="radio" name="q5" value="b" /> b) Talk to a
+                  mentor or trusted person
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="c" /> c) Quit immediately
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="submitQuiz()" class="submit-btn">Submit Quiz</button>
+
+          <div id="quiz-results" class="quiz-results" style="display: none">
+            <h3>Quiz Results</h3>
+            <p id="score-display"></p>
+            <div class="quiz-actions">
+              <button onclick="retryQuiz()" class="retry-btn">Try Again</button>
+              <button onclick="showSection('about')" class="exit-btn">
+                Exit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certification Section -->
+      <section id="certification" class="content-section">
+        <div class="certification-container">
+          <h2>Course Certification</h2>
+          <div id="cert-locked" class="cert-locked">
+            <i class="fas fa-lock cert-lock-icon"></i>
+            <h3>Certificate Access Locked</h3>
+            <p>
+              You need to pass the quiz with at least 70% to access the
+              certificate.
+            </p>
+            <button onclick="showSection('quiz')" class="go-quiz-btn">
+              Take Quiz
+            </button>
+          </div>
+
+          <div id="cert-available" class="cert-available" style="display: none">
+            <img
+              src="images/vuyo-avatar.svg"
+              alt="Vuyo Mphakwana"
+              class="cert-avatar"
+            />
+            <h3>Congratulations!</h3>
+            <p class="vuyo-message">
+              "Stay safe and make wiser decisions for your future and career.
+              Thank you for watching and taking this course."
+            </p>
+            <div class="cert-form">
+              <label for="userName">Enter your name for the certificate:</label>
+              <input
+                type="text"
+                id="userName"
+                placeholder="Your full name"
+                maxlength="50"
+              />
+              <button onclick="generateCertificate()" class="generate-cert-btn">
+                <i class="fas fa-download"></i> Generate Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification" style="display: none">
+      <span id="notification-text"></span>
+      <button onclick="hideNotification()" class="notification-close">×</button>
+    </div>
+
+    <!-- Certificate Canvas (Hidden) -->
+    <canvas
+      id="certificateCanvas"
+      style="display: none"
+      width="800"
+      height="600"
+    ></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
