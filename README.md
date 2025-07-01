@@ -46,7 +46,6 @@ The programme consists of the following components:
 
 ## 🛠️ Tools Used
 
-* PowerPoint for programme presentation
 * Video production tools for storytelling episodes
 * Quiz tools and digital forms (e.g. Google Forms, Typeform)
 * Canva or Adobe Express for designing certificates and resources
@@ -82,4 +81,4 @@ This programme is designed to **spark awareness, inspire positive behaviour chan
 
 ---
 
-Let me know if you want this styled differently or if you want a downloadable version.
+
