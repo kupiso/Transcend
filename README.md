@@ -1,6 +1,4 @@
 # project-transcend
-https://transcend-intern.netlify.app/
-
 Teenage Pregnancy Awareness Programme
 
 ## 📘 Project Overview
