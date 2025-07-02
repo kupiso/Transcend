@@ -44,10 +44,6 @@ The programme consists of the following components:
 
 ## 🛠️ Tools Used
 
-* Video production tools for storytelling episodes
-* Quiz tools and digital forms (e.g. Google Forms, Typeform)
-* Canva or Adobe Express for designing certificates and resources
-
 ## 📁 Folder Structure (If uploading resources)
 
 ```
