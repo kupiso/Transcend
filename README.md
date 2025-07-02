@@ -16,7 +16,7 @@ This project is part of a corporate initiative aimed at **raising awareness abou
 
 The programme consists of the following components:
 
-1. **Storytelling Videos**
+1. **Storytelling/Lesson Videos**
 
    * Real-life inspired video episodes focusing on teenage pregnancy
    * Designed to be engaging and relatable for learners
